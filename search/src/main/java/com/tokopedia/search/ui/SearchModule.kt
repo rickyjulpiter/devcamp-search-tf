@@ -10,8 +10,7 @@ import com.tokopedia.search.repository.SearchRepositoryImpl
 import dagger.Module
 import dagger.Provides
 
-@Module
-class SearchModule {
+@Module class SearchModule {
 
 		@SearchScope
 		@Provides
