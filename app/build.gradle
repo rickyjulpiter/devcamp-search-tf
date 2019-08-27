@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.tokopedia.productsearch"
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.lib.kotlin
+    implementation rootProject.ext.lib.appcompat
+    implementation rootProject.ext.lib.tensorflow
+    implementation rootProject.ext.lib.coreKtx
+
+    testImplementation rootProject.ext.testLib.junit
+    androidTestImplementation rootProject.ext.testLib.testRunner
+    androidTestImplementation rootProject.ext.testLib.espresso
+}
