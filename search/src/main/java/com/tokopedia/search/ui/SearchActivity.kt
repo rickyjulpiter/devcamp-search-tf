@@ -2,20 +2,30 @@ package com.tokopedia.search.ui
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import com.tokopedia.abstraction.base.BaseActivity
 import com.tokopedia.search.R
+import com.tokopedia.search.data.entity.Product
 import com.tokopedia.search.di.DaggerSearchComponent
+import javax.inject.Inject
 
-class SearchActivity: AppCompatActivity() {
+class SearchActivity: BaseActivity() {
 
-		override fun onCreate(savedInstanceState: Bundle?) {
-				super.onCreate(savedInstanceState)
-				setContentView(R.layout.activity_search)
-				injector()
+		override fun contentView(): Int = R.layout.activity_search
+
+		@Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+		private lateinit var viewModel: SearchViewModel
+
+		override fun initView() {
+				viewModel = ViewModelProviders
+						.of(this, viewModelFactory)
+						.get(SearchViewModel::class.java)
 		}
 
-		private fun injector() {
+		override fun injector() {
 				DaggerSearchComponent.builder()
 						.searchModule(SearchModule())
 						.build()
