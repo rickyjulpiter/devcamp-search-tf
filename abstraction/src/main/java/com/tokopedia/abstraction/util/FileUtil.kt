@@ -7,7 +7,7 @@ import java.io.InputStreamReader
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 
-class FileUtil {
+object FileUtil {
 
 		fun model(assetManager: AssetManager, path: String): MappedByteBuffer {
 				val file = assetManager.openFd(path)
