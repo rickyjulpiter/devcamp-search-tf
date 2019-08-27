@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:orientation="vertical"
+		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:background="@android:color/white"
+		tools:context=".MainActivity">
 
-</LinearLayout>
+		<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:scaleType="fitEnd"
+				android:src="@drawable/bg_footer"
+				android:layout_alignParentBottom="true"/>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginTop="140dp">
+
+				<ImageView
+						android:layout_width="150dp"
+						android:layout_height="70dp"
+						android:layout_marginBottom="20dp"
+						android:layout_gravity="center"
+						android:src="@drawable/logo_tokopedia"/>
+
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="@dimen/dp_16"
+						android:layout_marginEnd="@dimen/dp_16"
+						android:layout_marginBottom="@dimen/dp_16"
+						android:orientation="horizontal">
+
+						<EditText
+								android:id="@+id/edtSearch"
+								android:layout_width="0dp"
+								android:layout_weight="1"
+								android:layout_height="wrap_content"
+								android:hint="@string/placeholder_search"
+								android:maxLines="1"
+								android:inputType="text"/>
+
+						<Button
+								android:layout_width="0dp"
+								android:layout_weight="0.3"
+								android:layout_height="wrap_content"
+								android:text="@string/btn_search"/>
+
+				</LinearLayout>
+
+		</LinearLayout>
+
+</RelativeLayout>

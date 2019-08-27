@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">abstraction</string>
+    <string name="placeholder_search">Link Gambar…</string>
+    <string name="btn_search">Cari</string>
 </resources>
