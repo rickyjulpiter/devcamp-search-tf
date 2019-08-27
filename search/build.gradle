@@ -1,5 +1,6 @@
 apply from: "$rootDir/config/common.gradle"
 
 dependencies {
-
+    implementation project(rootProject.ext.internal.abstraction)
+    implementation project(rootProject.ext.internal.network)
 }

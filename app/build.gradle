@@ -32,6 +32,9 @@ dependencies {
     implementation rootProject.ext.lib.tensorflow
     implementation rootProject.ext.lib.coreKtx
 
+    //internal module
+    implementation project(rootProject.ext.internal.search)
+
     testImplementation rootProject.ext.testLib.junit
     androidTestImplementation rootProject.ext.testLib.testRunner
     androidTestImplementation rootProject.ext.testLib.espresso

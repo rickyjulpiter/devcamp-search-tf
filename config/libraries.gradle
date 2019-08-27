@@ -59,6 +59,7 @@ ext {
 
     internal = [
             "abstraction"               : ":abstraction",
-            "network"                   : ":network"
+            "network"                   : ":network",
+            "search"                    : ":search"
     ]
 }
