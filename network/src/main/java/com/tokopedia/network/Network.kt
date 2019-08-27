@@ -12,10 +12,10 @@ import java.util.concurrent.TimeUnit
  * github: @isfaaghyth
  */
 
-const val PING_INTERVAL = 30L
-const val REQUEST_TIME_OUT = 60L
-
 object Network {
+		private const val PING_INTERVAL = 30L
+		private const val REQUEST_TIME_OUT = 60L
+
 		fun service(url: String = BuildConfig.MAIN_URL): Retrofit {
 				return Retrofit.Builder()
 						.baseUrl(url)
