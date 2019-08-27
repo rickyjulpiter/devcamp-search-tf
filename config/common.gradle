@@ -14,6 +14,8 @@ android {
         versionName rootProject.ext.versionName
 
         testInstrumentationRunner rootProject.ext.testLib.instrumentationRunner
+
+        buildConfigField("String", "MAIN_URL", api_tokopedia)
     }
     buildTypes {
         release {
