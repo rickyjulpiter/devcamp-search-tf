@@ -3,6 +3,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-allopen'
+
+allOpen {
+    def abstraction = "com.tokopedia.abstraction"
+    def openClass = ".annotation.OpenClass"
+    annotation abstraction + openClass
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -31,6 +38,17 @@ dependencies {
     implementation rootProject.ext.lib.appcompat
     implementation rootProject.ext.lib.tensorflow
     implementation rootProject.ext.lib.coreKtx
+
+    //reactive framework
+    implementation rootProject.ext.lib.rxjava
+    implementation rootProject.ext.lib.rxkotlin
+    implementation rootProject.ext.lib.rxandroid
+
+    //dependencies injection
+    implementation rootProject.ext.lib.dagger
+    implementation rootProject.ext.lib.daggerAndroid
+    kapt rootProject.ext.lib.daggerCompiler
+    kapt rootProject.ext.lib.daggerProcessor
 
     testImplementation rootProject.ext.testLib.junit
     androidTestImplementation rootProject.ext.testLib.testRunner
