@@ -24,6 +24,8 @@ ext {
     retrofit = "2.6.0"
     okhttpLog = "3.11.0"
 
+    gson = "2.8.5"
+
     testRunner = "1.1.0-alpha4"
     espresso = "3.1.0-alpha4"
     junit = "4.12"
@@ -47,7 +49,8 @@ ext {
             "daggerProcessor"           : "com.google.dagger:dagger-android-processor:${dagger}",
             "rxjava"                    : "io.reactivex.rxjava2:rxjava:${rxjava}",
             "rxkotlin"                  : "io.reactivex.rxjava2:rxkotlin:${rxkotlin}",
-            "rxandroid"                 : "io.reactivex.rxjava2:rxandroid:${rxandroid}"
+            "rxandroid"                 : "io.reactivex.rxjava2:rxandroid:${rxandroid}",
+            "gson"                      : "com.google.code.gson:gson:${gson}"
     ]
 
     testLib = [

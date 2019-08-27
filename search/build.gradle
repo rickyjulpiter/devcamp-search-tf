@@ -1,6 +1,10 @@
 apply from: "$rootDir/config/common.gradle"
 
 dependencies {
+    //libraries
+    implementation rootProject.ext.lib.retrofit
+
+    //internals
     implementation project(rootProject.ext.internal.abstraction)
     implementation project(rootProject.ext.internal.network)
 }

@@ -50,6 +50,9 @@ dependencies {
     kapt rootProject.ext.lib.daggerCompiler
     kapt rootProject.ext.lib.daggerProcessor
 
+    //utilities
+    implementation rootProject.ext.lib.gson
+
     testImplementation rootProject.ext.testLib.junit
     androidTestImplementation rootProject.ext.testLib.testRunner
     androidTestImplementation rootProject.ext.testLib.espresso
