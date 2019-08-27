@@ -3,6 +3,8 @@ apply from: "$rootDir/config/common.gradle"
 dependencies {
     //libraries
     implementation rootProject.ext.lib.retrofit
+    implementation rootProject.ext.lib.lifecycle
+    kapt rootProject.ext.lib.lifecycleCompiler
 
     //internals
     implementation project(rootProject.ext.internal.abstraction)
