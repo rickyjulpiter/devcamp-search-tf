@@ -1,4 +1,8 @@
 ext {
+    applicationId = "com.tokopedia.productsearch"
+    versionCode = 1
+    versionName = "1.0"
+
     compileSdkVersion = 28
     buildToolsVersion = "29.0.0"
     minSdkVersion = 18
@@ -15,24 +19,25 @@ ext {
     okhttpLog = "3.11.0"
 
     lib = [
-            "tensorflow"            : "org.tensorflow:tensorflow-lite:+",
-            "appcompat"             : "androidx.appcompat:appcompat:${appcompat}",
-            "kotlin"                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin}",
-            "coreKtx"               : "androidx.core:core-ktx:${coreKtx}",
-            "retrofit"              : "com.squareup.retrofit2:retrofit:${retrofit}",
-            "retrofitGsonConverter" : "com.squareup.retrofit2:converter-gson:${retrofit}",
-            "retrofitRxAdapter"     : "com.squareup.retrofit2:adapter-rxjava2:${retrofit}",
-            "okHttpLogging"         : "com.squareup.okhttp3:logging-interceptor:${okhttpLog}"
+            "tensorflow"                : "org.tensorflow:tensorflow-lite:+",
+            "appcompat"                 : "androidx.appcompat:appcompat:${appcompat}",
+            "kotlin"                    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin}",
+            "coreKtx"                   : "androidx.core:core-ktx:${coreKtx}",
+            "retrofit"                  : "com.squareup.retrofit2:retrofit:${retrofit}",
+            "retrofitGsonConverter"     : "com.squareup.retrofit2:converter-gson:${retrofit}",
+            "retrofitRxAdapter"         : "com.squareup.retrofit2:adapter-rxjava2:${retrofit}",
+            "okHttpLogging"             : "com.squareup.okhttp3:logging-interceptor:${okhttpLog}"
     ]
 
     testLib = [
-            "testRunner"            : "androidx.test:runner:${testRunner}",
-            "espresso"              : "androidx.test.espresso:espresso-core:${espresso}",
-            "junit"                 : "junit:junit:${junit}"
+            "instrumentationRunner"     : "androidx.test.runner.AndroidJUnitRunner",
+            "testRunner"                : "androidx.test:runner:${testRunner}",
+            "espresso"                  : "androidx.test.espresso:espresso-core:${espresso}",
+            "junit"                     : "junit:junit:${junit}"
     ]
 
     internal = [
-            "abstraction"           : ":abstraction",
-            "network"               : ":network"
+            "abstraction"               : ":abstraction",
+            "network"                   : ":network"
     ]
 }
