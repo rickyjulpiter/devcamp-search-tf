@@ -1,4 +1,10 @@
+//main
 include ':app'
+
+//libraries
 include ':network'
 include ':abstraction'
+
+//features
 include ':search'
+include ':recognize'

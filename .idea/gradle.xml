@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/abstraction" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/recognize" />
             <option value="$PROJECT_DIR$/search" />
           </set>
         </option>
