@@ -14,6 +14,10 @@ class SearchViewModel @Inject constructor(
 		private val scheduler: SchedulerProvider
 ): BaseViewModel() {
 
+		private val _state = MutableLiveData<SearchState>()
+		val state: LiveData<SearchState>
+				get() = _state
+
 		private val _result = MutableLiveData<ProductData>()
 		val result: LiveData<ProductData>
 				get() = _result
@@ -25,6 +29,8 @@ class SearchViewModel @Inject constructor(
 		fun getProductSearch(query: String) {
 				add {
 						repository.productSearch(query)
+								.doOnSubscribe { _state.postValue(SearchState.ShowLoading) }
+								.doOnTerminate { _state.postValue(SearchState.HideLoading) }
 								.observeOn(scheduler.ui())
 								.subscribeOn(scheduler.io())
 								.subscribeBy(
