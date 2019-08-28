@@ -30,6 +30,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    testOptions {
+        unitTests.includeAndroidResources true
+    }
 }
 
 dependencies {
@@ -52,6 +55,9 @@ dependencies {
 
     //utilities
     implementation rootProject.ext.lib.gson
+
+    testImplementation rootProject.ext.testLib.core
+    testImplementation rootProject.ext.testLib.extJunit
 
     testImplementation rootProject.ext.testLib.junit
     testImplementation rootProject.ext.testLib.mockito

@@ -30,6 +30,8 @@ ext {
 
     mockito = "3.0.0"
     testRunner = "1.1.0-alpha4"
+    testCore = "1.1.0"
+    testExt = "1.1.0"
     espresso = "3.1.0-alpha4"
     junit = "4.12"
 
@@ -62,7 +64,9 @@ ext {
             "testRunner"                : "androidx.test:runner:${testRunner}",
             "espresso"                  : "androidx.test.espresso:espresso-core:${espresso}",
             "junit"                     : "junit:junit:${junit}",
-            "mockito"                   : "org.mockito:mockito-inline:${mockito}"
+            "mockito"                   : "org.mockito:mockito-inline:${mockito}",
+            "core"                      : "androidx.test:core:${testCore}",
+            "extJunit"                  : "androidx.test.ext:junit:${testCore}"
     ]
 
     internal = [
