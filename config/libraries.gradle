@@ -24,6 +24,8 @@ ext {
     retrofit = "2.6.0"
     okhttpLog = "3.11.0"
 
+    recyclerview = "1.0.0"
+
     gson = "2.8.5"
 
     testRunner = "1.1.0-alpha4"
@@ -50,7 +52,8 @@ ext {
             "rxjava"                    : "io.reactivex.rxjava2:rxjava:${rxjava}",
             "rxkotlin"                  : "io.reactivex.rxjava2:rxkotlin:${rxkotlin}",
             "rxandroid"                 : "io.reactivex.rxjava2:rxandroid:${rxandroid}",
-            "gson"                      : "com.google.code.gson:gson:${gson}"
+            "gson"                      : "com.google.code.gson:gson:${gson}",
+            "recyclerview"              : "androidx.recyclerview:recyclerview:${recyclerview}"
     ]
 
     testLib = [

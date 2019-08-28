@@ -1,6 +1,7 @@
 apply from: "$rootDir/config/common.gradle"
 
 dependencies {
+    implementation rootProject.ext.lib.recyclerview
     implementation rootProject.ext.lib.lifecycle
     kapt rootProject.ext.lib.lifecycleCompiler
 }
