@@ -54,6 +54,7 @@ dependencies {
     implementation rootProject.ext.lib.gson
 
     testImplementation rootProject.ext.testLib.junit
+    testImplementation rootProject.ext.testLib.mockito
     androidTestImplementation rootProject.ext.testLib.testRunner
     androidTestImplementation rootProject.ext.testLib.espresso
 }
