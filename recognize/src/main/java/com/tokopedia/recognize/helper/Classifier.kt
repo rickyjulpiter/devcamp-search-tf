@@ -1,4 +1,4 @@
-package com.tokopedia.recognize
+package com.tokopedia.recognize.helper
 
 import android.graphics.Bitmap
 

@@ -4,6 +4,8 @@ import android.content.res.AssetManager
 import android.graphics.Bitmap
 import com.tokopedia.abstraction.util.BitmapConverter
 import com.tokopedia.abstraction.util.FileUtil
+import com.tokopedia.recognize.helper.Classifier
+import com.tokopedia.recognize.helper.Mapper
 import org.tensorflow.lite.Interpreter
 import java.lang.Float
 import java.util.*
@@ -20,11 +22,14 @@ class TensorflowClassifier(
 		labelPath: String,
 		private val inputSize: Int): Classifier {
 
+		companion object {
+				private const val UNKNOWN = "unknown"
+				private const val MAX_RESULTS = 3
+				private const val THRESHOLD = 0.1f
+		}
+
 		private val interpreter: Interpreter = Interpreter(FileUtil.model(assetManager, modelPath))
 		private var labels: List<String> = FileUtil.label(assetManager, labelPath)
-
-		private val MAX_RESULTS = 3
-		private val THRESHOLD = 0.1f
 
 		override fun recognize(bitmap: Bitmap): List<Mapper> {
 				val bmp = BitmapConverter.bitmapToTypeBuffer(bitmap, inputSize)
@@ -51,8 +56,8 @@ class TensorflowClassifier(
 						if (confidence > THRESHOLD) {
 								priorityQueue.add(
 										Mapper(
-												"$i",
-												if (this.labels.size > i) this.labels[i] else "unknown",
+												i.toString(),
+												if (this.labels.size > i) this.labels[i] else UNKNOWN,
 												confidence
 										)
 								)
