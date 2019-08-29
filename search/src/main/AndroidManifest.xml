@@ -3,7 +3,6 @@
 		package="com.tokopedia.search">
 
 		<application>
-				<activity android:name=".ui.SearchActivity"/>
 		</application>
 
 </manifest>
